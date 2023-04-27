@@ -7,7 +7,7 @@
     "start": "parcel",
     "build": "parcel build"
   },
-  "author": "Prince Roy",
+  "author": "V Bhavya",
   "license": "ISC",
   "dependencies": {
     "core-js": "^3.25.1",
