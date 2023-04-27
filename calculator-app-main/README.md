@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live site URL here](https://calculator-prince.netlify.app/)
+- Live Site URL: [Live site URL here](https://web-app-calc.netlify.app/)
 
 ## My process
 
@@ -66,7 +66,3 @@ Users should be able to:
 ### Continued development
 
 Sharpening my knowledge of ES6 classes as ES6 classes is one of the ways to achieve prototypal inheritance by abstracting each functionality. This provides more flexibility in writing code without interpolating other member functions.
-
-## Author
-
-- Twitter - [@prince_popups](https://www.twitter.com/yourusername)
