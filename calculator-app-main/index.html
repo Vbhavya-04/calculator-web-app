@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+		<meta name="theme-color" content="#ffffff" />
+		<meta name="msapplication-TileColor" content="#603cba" />
+		<meta name="description" content="Calculator app created using vanilla js" />
+
+		<!-- Favicon links -->
+		<link rel="manifest" href="./manifest.json" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./src/assets/images/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="./src/assets/images/favicon-16x16.png" />
+
+		<!-- Main Stylesheet -->
+		<link rel="stylesheet" href="./src/sass/index.scss" />
+
+		<!-- Script -->
+		<script defer type="module" src="./src/js/index.js"></script>
+
+		<title>Calculator app</title>
+	</head>
+
+	<body class="theme-1">
+		<header>
+			<h1 class="visually_hidden">Calculator</h1>
+		</header>
+
+		<main class="calculator">
+			<div class="toggle calculator__head">
+				<span class="">calc</span>
+				<article class="themes toggle__themes">
+					<h2>theme</h2>
+					<div class="options themes__options">
+						<div class="options__labels">
+							<label for="option-1">1</label>
+							<label for="option-2">2</label>
+							<label for="option-3">3</label>
+						</div>
+
+						<div class="radio_btns">
+							<input class="radio active" type="radio" data-theme="1" name="radio" id="option-1" />
+							<input class="radio" type="radio" data-theme="2" name="radio" id="option-2" />
+							<input class="radio" type="radio" data-theme="3" name="radio" id="option-3" />
+							<button class="dot" type="button" aria-label="dot"></button>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<div class="calculator__result">
+				<div data-previous-operand></div>
+				<div data-current-operand></div>
+			</div>
+
+			<div class="keypad calculator__keypad">
+				<button class="key key_num" type="button">7</button>
+				<button class="key key_num" type="button">8</button>
+				<button class="key key_num" type="button">9</button>
+				<button class="key key_delete" type="button">DEL</button>
+				<button class="key key_num" type="button">4</button>
+				<button class="key key_num" type="button">5</button>
+				<button class="key key_num" type="button">6</button>
+				<button class="key key_operation" type="button">+</button>
+				<button class="key key_num" type="button">1</button>
+				<button class="key key_num" type="button">2</button>
+				<button class="key key_num" type="button">3</button>
+				<button class="key key_operation" type="button">-</button>
+				<button class="key key_num" type="button">.</button>
+				<button class="key key_num" type="button">0</button>
+				<button class="key key_operation" type="button">/</button>
+				<button class="key key_operation" type="button">x</button>
+				<button class="key key_reset" type="button">RESET</button>
+				<button class="key key_equal" type="button">=</button>
+			</div>
+		</main>
+
+		<div class="attribution">
+			Coded by
+			<a href="https://github.com/iprinceroyy">Prince Roy</a>
+		</div>
+	</body>
+</html>

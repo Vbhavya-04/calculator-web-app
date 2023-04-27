@@ -1,0 +1,190 @@
+@use 'variables' as var;
+@use 'mixin';
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: var.$font-family;
+	font-size: var.$font-size;
+}
+
+.visually_hidden {
+	font-size: 0;
+}
+
+.calculator {
+	width: min(87%, 555px);
+	display: flex;
+	flex-direction: column;
+	gap: clamp(1.5rem, 1.396rem + 0.44vw, 1.75rem);
+	margin: 1rem;
+}
+
+.calculator__head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 0.5rem;
+
+	span {
+		margin-block-start: 0.7rem;
+	}
+
+	.themes {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+
+		h2 {
+			font-size: 0.8rem;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			padding-block-start: 1.2rem;
+			opacity: 0.9;
+		}
+
+		.options__labels {
+			font-size: 0.8rem;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.radio_btns {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			width: 4.5rem;
+			height: auto;
+			border: none;
+			border-radius: 15px;
+			padding-block: 0.4rem;
+			padding-inline: 0.4rem;
+			margin-block-start: 0.4rem;
+			overflow: hidden;
+		}
+
+		/* Hiding the native radio button*/
+		input[type='radio'] {
+			-webkit-tap-highlight-color: transparent;
+			background-color: transparent;
+			opacity: 0;
+		}
+
+		/* Dot that points to the current theme*/
+		.dot {
+			width: 1rem;
+			height: 1rem;
+			border: none;
+			border-radius: 50%;
+			position: absolute;
+			left: 0rem;
+			top: 0.3rem;
+			transform: translateX(0.3rem);
+			z-index: 3;
+			transition: all 300ms ease-in-out;
+
+			@media (hover: hover) {
+				&:hover {
+					filter: brightness(125%);
+					cursor: pointer;
+				}
+			}
+
+			&:active {
+				filter: brightness(125%);
+			}
+		}
+	}
+}
+
+.calculator__result {
+	padding: clamp(2rem, 1.711rem + 1.23vw, 2.5rem);
+	border: none;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	height: clamp(6.5rem, 5.96rem + 2.29vw, 7.8rem);
+	font-size: clamp(2.5rem, 2.127rem + 1.59vw, 3.4rem);
+	word-break: break-all;
+	overflow: hidden;
+
+	div:first-child {
+		font-size: 0.9rem;
+		margin-bottom: 0.3rem;
+	}
+}
+
+.calculator__keypad {
+	padding: clamp(1.5rem, 1.292rem + 0.88vw, 2rem);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	border-radius: 10px;
+	column-gap: clamp(1rem, 0.792rem + 0.88vw, 1.5rem);
+	row-gap: clamp(1.3rem, 1.134rem + 0.705vw, 1.7rem);
+
+	.key {
+		padding-block: 1rem;
+		border: none;
+		outline: 3px solid transparent;
+		border-radius: 5px;
+		font-size: clamp(2rem, 1.792rem + 0.88vw, 2.5rem);
+		font-family: var.$font-family;
+		font-weight: var.$fw-700;
+		transition: all 1ms ease-in-out;
+
+		@media (min-width: 45rem) {
+			border-radius: 10px;
+			padding-block-end: 0.5rem;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				filter: brightness(125%);
+				cursor: pointer;
+			}
+		}
+
+		&:active {
+			filter: brightness(125%);
+			cursor: pointer;
+			/* Key pressed effect */
+			transform: translateY(4px);
+			box-shadow: none;
+		}
+	}
+
+	.key_delete {
+		font-size: clamp(1.3rem, 1.09rem + 0.88vw, 1.8rem);
+	}
+
+	.key_reset {
+		font-size: clamp(1.3rem, 1.09rem + 0.88vw, 1.8rem);
+		grid-area: 5 / 1 / span 1 / span 2;
+	}
+
+	.key_equal {
+		font-size: clamp(1.3rem, 1.09rem + 0.88vw, 1.8rem);
+		grid-area: 5 / 3 / span 1 / span 2;
+	}
+}
+
+.attribution {
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	margin-block: 1rem;
+	a {
+		color: currentColor;
+	}
+}
